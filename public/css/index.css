@@ -70,6 +70,16 @@ body, html {
     max-width: 200px;
 }
 
+.box {
+    border: 1px solid lavender;
+    border-radius: 1vw;
+    margin: 0.5vh;
+    display: flex;
+    align-content: center;
+    padding-left: 0.5vw;
+    width: 80vw;
+}
+
 /* Tablets and larger devices */
 @media (min-width: 600px) {
     html {
