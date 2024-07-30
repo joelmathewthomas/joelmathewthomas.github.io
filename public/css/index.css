@@ -105,9 +105,6 @@ body, html {
         font-size: 0.875em; /* 14px */
     }
 
-    #avatar {
-        width : 10rem;
-    }
 }
 
 /* Medium height screens (e.g., tablets in landscape mode) */
