@@ -38,6 +38,16 @@ cards.forEach((card,index) => {
     }); 
 });
 
+cards.forEach((card)=>{
+    card.addEventListener('scroll',()=> {
+        if (isScrolling) return;
+        isScrolling = true;
+        setTimeout(()=>{
+            isScrolling = false;
+        }, 250);
+    })
+})
+
 cards.forEach((card,index) => {
     card.addEventListener('touchstart', (event) => {
         touchStartY = event.changedTouches[0].screenY;

@@ -82,6 +82,17 @@ body, html {
     width: 80vw;
 }
 
+.project {
+    border: 1px solid lavender;
+    border-radius: 1vw;
+    margin: 0.5vh;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding-left: 0.5vw;
+    width: 80vw;
+}
+
 
 /* Tablets and larger devices */
 @media (min-width: 600px) {
