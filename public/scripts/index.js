@@ -2,82 +2,81 @@ let currentCard = 0;
 const cards = document.querySelectorAll('.card');
 const dots = document.querySelectorAll('.dot');
 let isScrolling = false;
-let startY = 0;
+let touchStartY = 0;
+let touchEndY = 0;
 
 function updateCards(){
-    cards.forEach((card, index)=> {
-        if (index === currentCard) {
-            card.style.top = '0';
+    cards.forEach((card,index)=> {
+        if ( index === currentCard){
+            card.style.top = 0;
             card.classList.remove('inactive');
-        } else if (index < currentCard) {
+            dots[index].classList.add('active');
+        } else if(index < currentCard){
             card.style.top = '-100%';
             card.classList.add('inactive');
+            dots[index].classList.remove('active');
         } else {
             card.style.top = '100%';
             card.classList.add('inactive');
+            dots[index].classList.remove('active');
         }
-    });
-
-    dots.forEach((dot, index) => {
-        if(index == currentCard) {
-            dot.classList.add('active');
-        } else {
-            dot.classList.remove('active');
-        }
-    });
+    })
 }
 
-function handleScroll(deltaY) {
-    if(isScrolling) return;
-
-    const currentCardElement = cards[currentCard];
-    const currentCardCardScrollHeight = currentCardElement.scrollHeight;
-    const currentCardClientHeight = currentCardElement.clientHeight;
-    const currentCardScrollTop = currentCardElement.scrollTop;
-
-    if (deltaY > 0) {
-        if (currentCardScrollTop + currentCardClientHeight >= currentCardCardScrollHeight)
-            if (currentCard < cards.length -1) {
-                currentCard++;
-                updateCards();
+cards.forEach((card,index) => {
+    card.addEventListener("wheel",(event) => {
+            element = cards[index];
+            if (event.deltaY > 0) {
+                if (element.scrollTop + element.clientHeight >= element.scrollHeight) {
+                    handleScroll(event.deltaY);
+                } 
+            } else if (event.deltaY < 0) {
+                if (element.scrollTop === 0) {
+                    handleScroll(event.deltaY);
+                }
             }
-        else {
-            currentCardElement.scrollTop += deltaY;
-        }
-    } else {
-        if (currentCardScrollTop === 0) {
-            if (currentCard > 0) {
-                currentCard--;
-                updateCards();
+    }); 
+});
+
+cards.forEach((card,index) => {
+    card.addEventListener('touchstart', (event) => {
+        touchStartY = event.changedTouches[0].screenY;
+    });
+
+    card.addEventListener('touchend', (event) => {
+        touchEndY = event.changedTouches[0].screenY;
+        if (touchEndY < touchStartY - 50) {
+            element = cards[index];
+            if (element.scrollTop + element.clientHeight >= element.scrollHeight) {
+                handleScroll(50);
+            } 
+        } else if(touchEndY > touchStartY + 50) {
+            element = cards[index];
+            if (element.scrollTop === 0) {
+                handleScroll(-50);
             }
-        } else {
-            currentCardElement.scrollTop += deltaY;
         }
+    })
+
+
+})
+
+
+function handleScroll( deltaY ) {
+    if (isScrolling) return;
+    if ( deltaY > 0 && currentCard < cards.length-1) {
+        currentCard++;
+        updateCards();
+    } else if ( deltaY < 0 && currentCard > 0 ) {
+        currentCard--;
+        updateCards();
     }
 
     isScrolling = true;
-    setTimeout(()=> {
+    setTimeout(()=>{
         isScrolling = false;
-    },250);
-};
-
-document.addEventListener('wheel',(event) => {
-    handleScroll(event.deltaY);
-});
-
-document.addEventListener('touchstart',(event) => {
-    startY = event.touches[0].clientY;
-});
-
-document.addEventListener('touchmove',(event) => {
-    event.preventDefault();
-});
-
-document.addEventListener('touchend',(event) => {
-    const endY = event.changedTouches[0].clientY;
-    const deltaY = startY - endY;
-    handleScroll(deltaY);
-})
+    },500);
+}
 
 
 dots.forEach((dot,index)=>{
@@ -86,6 +85,5 @@ dots.forEach((dot,index)=>{
         updateCards();
     });
 });
-
 
 updateCards();

@@ -28,7 +28,8 @@ body, html {
     align-items: center;
     transition: top 0.7s ,opacity 0.2s, scale ease 0.2s;
     flex-direction: column;
-    overflow-y: scroll; 
+    padding: 1rem;
+    overflow: auto; 
 }
 
 .card p {
