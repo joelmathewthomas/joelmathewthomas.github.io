@@ -2,6 +2,7 @@ let currentCard = 0;
 const cards = document.querySelectorAll('.card');
 const dots = document.querySelectorAll('.dot');
 let isScrolling = false;
+let startY = 0;
 
 function updateCards(){
     cards.forEach((card, index)=> {
@@ -23,10 +24,10 @@ function updateCards(){
     });
 }
 
-document.addEventListener('wheel', (event) => {
+function handleScroll(deltaY) {
     if(isScrolling) return;
 
-    if (event.deltaY > 0) {
+    if (deltaY > 0) {
         if (currentCard < cards.length -1) {
             currentCard++;
             updateCards();
@@ -42,7 +43,26 @@ document.addEventListener('wheel', (event) => {
     setTimeout(()=> {
         isScrolling = false;
     },250);
+};
+
+document.addEventListener('wheel',(event) => {
+    handleScroll(event.deltaY);
 });
+
+document.addEventListener('touchstart',(event) => {
+    startY = event.touches[0].clientY;
+});
+
+document.addEventListener('touchmove',(event) => {
+    event.preventDefault();
+});
+
+document.addEventListener('touchend',(event) => {
+    const endY = event.changedTouches[0].clientY;
+    const deltaY = startY - endY;
+    handleScroll(deltaY);
+})
+
 
 dots.forEach((dot,index)=>{
     dot.addEventListener('click',() => {
