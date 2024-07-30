@@ -30,15 +30,28 @@ function updateCards(){
 function handleScroll(deltaY) {
     if(isScrolling) return;
 
+    const currentCardElement = cards[currentCard];
+    const currentCardCardScrollHeight = currentCardElement.scrollHeight;
+    const currentCardClientHeight = currentCardElement.clientHeight;
+    const currentCardScrollTop = currentCardElement.scrollTop;
+
     if (deltaY > 0) {
-        if (currentCard < cards.length -1) {
-            currentCard++;
-            updateCards();
+        if (currentCardScrollTop + currentCardClientHeight >= currentCardCardScrollHeight)
+            if (currentCard < cards.length -1) {
+                currentCard++;
+                updateCards();
+            }
+        else {
+            currentCardElement.scrollTop += deltaY;
         }
     } else {
-        if (currentCard > 0) {
-            currentCard--;
-            updateCards();
+        if (currentCardScrollTop === 0) {
+            if (currentCard > 0) {
+                currentCard--;
+                updateCards();
+            }
+        } else {
+            currentCardElement.scrollTop += deltaY;
         }
     }
 
