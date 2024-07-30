@@ -96,6 +96,23 @@ dots.forEach((dot,index)=>{
     });
 });
 
+document.addEventListener('keydown', function(event) {
+            switch(event.key) {
+                case 'ArrowDown':
+                    if (currentCard < cards.length -1) {
+                        currentCard++;
+                        updateCards();
+                    }
+                    break;
+                case 'ArrowUp':
+                    if (currentCard > 0) {
+                        currentCard--;
+                        updateCards();
+                    }
+                    break;
+            }
+        });
+
 updateCards();
 
 function redirect(url) {
