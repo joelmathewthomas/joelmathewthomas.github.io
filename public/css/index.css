@@ -2,7 +2,7 @@ body, html {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: monospace;
     background: url(/public/images/bg.png);
     background-size: cover;
     color: lavender;
@@ -29,6 +29,10 @@ body, html {
     transition: top 0.7s ,opacity 0.2s;
     flex-direction: column;
     overflow: hidden;
+}
+
+.card p {
+    max-width: 80vw;
 }
 
 .card.inactive {
