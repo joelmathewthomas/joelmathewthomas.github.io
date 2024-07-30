@@ -27,7 +27,7 @@ cards.forEach((card,index) => {
     card.addEventListener("wheel",(event) => {
             element = cards[index];
             if (event.deltaY > 0) {
-                if (element.scrollTop + element.clientHeight >= element.scrollHeight) {
+                if (Math.abs(element.scrollHeight - element.scrollTop - element.clientHeight) < 1) {
                     handleScroll(event.deltaY);
                 } 
             } else if (event.deltaY < 0) {
@@ -47,7 +47,7 @@ cards.forEach((card,index) => {
         touchEndY = event.changedTouches[0].screenY;
         if (touchEndY < touchStartY - 50) {
             element = cards[index];
-            if (element.scrollTop + element.clientHeight >= element.scrollHeight) {
+            if (Math.abs(element.scrollHeight - element.scrollTop - element.clientHeight) < 1) {
                 handleScroll(50);
             } 
         } else if(touchEndY > touchStartY + 50) {
