@@ -26,9 +26,9 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: top 0.7s ,opacity 0.2s;
+    transition: top 0.7s ,opacity 0.2s, scale ease 0.2s;
     flex-direction: column;
-    overflow: hidden;
+    overflow-y: auto; 
 }
 
 .card p {
@@ -132,5 +132,18 @@ body, html {
 @media (min-width: 1024px) and (min-height: 800px) {
     html {
         font-size: 1.375em; /* 22px */
+    }
+}
+
+/* Scale the card down for smaller screens */
+@media (max-width: 600px) and (max-height: 600px) {
+    .card {
+        transform: scale(0.7); /* Scale down to 70% */
+    }
+}
+
+@media (max-width: 400px) and (max-height: 400px) {
+    .card {
+        transform: scale(0.5); /* Scale down to 50% */
     }
 }
