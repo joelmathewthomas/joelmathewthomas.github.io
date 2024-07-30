@@ -6,6 +6,7 @@ body, html {
     background: url(/public/images/bg.png);
     background-size: cover;
     color: lavender;
+    font-size: 1em;
 
 }
 
@@ -27,13 +28,7 @@ body, html {
     align-items: center;
     transition: top 0.5s;
     flex-direction: column;
-}
-
-.box {
-    border: 3px solid;
-    padding : 2vh; 
-    border-color: lavender;
-    border-radius: 2vw;
+    overflow: hidden;
 }
 
 .indicator {
@@ -47,13 +42,27 @@ body, html {
 }
 
 .dot {
-    width: 1vw;
-    height: 1vw;
+    width: 0.5rem;
+    height: 0.5rem;
     background-color: black;
     border-radius: 50%;
     cursor: pointer;
+    transition: background-color 0.5s;
 }
 
 .dot.active {
     background-color: lavender;
+}
+
+
+@media (min-width: 1200px) {
+  h2 {
+    font-size: 4rem;
+  }
+}
+
+@media(min-width: 800px) {
+    h2 {
+        font-size: 2rem;
+    }
 }
