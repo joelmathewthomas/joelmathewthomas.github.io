@@ -97,3 +97,7 @@ dots.forEach((dot,index)=>{
 });
 
 updateCards();
+
+function redirect(url) {
+    window.location.href=url;
+}

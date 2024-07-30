@@ -80,7 +80,15 @@ body, html {
     align-content: center;
     padding-left: 0.5vw;
     width: 80vw;
+    cursor: pointer;
+    transition: border-color 0.5s ease, border-radius 0.5s ease;
 }
+
+.box:hover {
+    border-color: peachpuff;
+    border-radius: 2vw;
+}
+
 
 .project {
     border: 1px solid lavender;
@@ -91,7 +99,15 @@ body, html {
     align-content: center;
     padding-left: 0.5vw;
     width: 80vw;
+    cursor: pointer;
+    transition: border-color 0.5s ease, border-radius 0.5s ease;
 }
+
+.project:hover {
+    border-color: peachpuff;
+    border-radius: 2vw;
+}
+
 
 
 /* Tablets and larger devices */
