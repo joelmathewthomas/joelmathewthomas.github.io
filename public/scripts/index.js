@@ -8,10 +8,13 @@ function updateCards(){
     cards.forEach((card, index)=> {
         if (index === currentCard) {
             card.style.top = '0';
+            card.classList.remove('inactive');
         } else if (index < currentCard) {
             card.style.top = '-100%';
+            card.classList.add('inactive');
         } else {
             card.style.top = '100%';
+            card.classList.add('inactive');
         }
     });
 
