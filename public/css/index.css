@@ -66,11 +66,16 @@ html::-webkit-scrollbar {
     background-color: black;
     border-radius: 50%;
     cursor: pointer;
-    transition: background-color 1s;
+    transition: background-color 1s, transform 0.5s ease;
 }
 
 .dot.active {
     background-color: lavender;
+    transform: scale(2);
+}
+
+.dot:hover {
+    transform: scale(2);
 }
 
 
