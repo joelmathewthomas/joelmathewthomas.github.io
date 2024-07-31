@@ -73,6 +73,24 @@ body, html {
     max-width: 200px;
 }
 
+#resume {
+    border: 1px solid lavender;
+    cursor: pointer;
+    transition: border-color 0.5s ease, border-radius 0.5s ease, background 0.5s ease;
+    color: lavender;
+    text-decoration: none;
+    padding: 0.5vw;
+    border-radius: 1vw;
+    margin-top: 5vh;
+}
+
+#resume:hover {
+    border-color: peachpuff;
+    border-radius: 2vw;
+    background-color: rgba(230,230,250,0.1);
+
+}
+
 .box {
     border: 1px solid lavender;
     border-radius: 1vw;
