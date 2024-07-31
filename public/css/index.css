@@ -126,10 +126,9 @@ body, html {
     margin: 0.5vh;
     display: flex;
     align-content: safe center;
-    justify-content: safecenter;
-    padding: 0.5vw;
-    min-width: 20vw;
-    max-width: 40vw;
+    justify-content: safe center;
+    padding-left: 1vw;
+    padding-right: 1vw;
     cursor: pointer;
     transition: border-color 0.5s ease, border-radius 0.5s ease, background 0.5s ease;
     flex-direction: row;
