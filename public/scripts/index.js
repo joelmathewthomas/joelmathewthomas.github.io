@@ -95,14 +95,12 @@ document.addEventListener("keydown", function (event) {
     switch (event.key) {
         case "ArrowDown":
             if (currentCard < cards.length - 1) {
-                currentCard++;
-                updateCards();
+                handleScroll(50);
             }
             break;
         case "ArrowUp":
             if (currentCard > 0) {
-                currentCard--;
-                updateCards();
+                handleScroll(-50);
             }
             break;
     }
