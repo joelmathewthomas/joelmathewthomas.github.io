@@ -81,12 +81,13 @@ body, html {
     padding-left: 0.5vw;
     width: 80vw;
     cursor: pointer;
-    transition: border-color 0.5s ease, border-radius 0.5s ease;
+    transition: border-color 0.5s ease, border-radius 0.5s ease, background 0.5s ease;
 }
 
 .box:hover {
     border-color: peachpuff;
     border-radius: 2vw;
+    background-color: rgba(230,230,250,0.1);
 }
 
 
@@ -100,12 +101,13 @@ body, html {
     padding-left: 0.5vw;
     width: 80vw;
     cursor: pointer;
-    transition: border-color 0.5s ease, border-radius 0.5s ease;
+    transition: border-color 0.5s ease, border-radius 0.5s ease, background 0.5s ease;
 }
 
 .project:hover {
     border-color: peachpuff;
     border-radius: 2vw;
+    background-color: rgba(230,230,250,0.1);
 }
 
 
