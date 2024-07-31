@@ -39,7 +39,6 @@ html::-webkit-scrollbar {
 }
 
 .card::-webkit-scrollbar {
-    scrollbar-width: none;
     display: none;
 }
 
