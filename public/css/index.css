@@ -58,7 +58,7 @@ body, html {
     background-color: black;
     border-radius: 50%;
     cursor: pointer;
-    transition: background-color 0.5s;
+    transition: background-color 1s;
 }
 
 .dot.active {
@@ -76,7 +76,7 @@ body, html {
 #resume {
     border: 1px solid lavender;
     cursor: pointer;
-    transition: border-color 0.5s ease, border-radius 0.5s ease, background 0.5s ease;
+    transition: border-color 0.5s ease, border-radius 1s ease, background 0.5s ease;
     color: lavender;
     text-decoration: none;
     padding: 0.5vw;
@@ -100,7 +100,7 @@ body, html {
     padding-left: 0.5vw;
     width: 80vw;
     cursor: pointer;
-    transition: border-color 0.5s ease, border-radius 0.5s ease, background 0.5s ease;
+    transition: border-color 0.5s ease, border-radius 1s ease, background 0.5s ease;
 }
 
 .box:hover {
@@ -120,7 +120,7 @@ body, html {
     padding-left: 0.5vw;
     width: 80vw;
     cursor: pointer;
-    transition: border-color 0.5s ease, border-radius 0.5s ease, background 0.5s ease;
+    transition: border-color 0.5s ease, border-radius 1s ease, background 0.5s ease;
 }
 
 .project:hover {
@@ -148,7 +148,7 @@ body, html {
     padding-left: 1vw;
     padding-right: 1vw;
     cursor: pointer;
-    transition: border-color 0.5s ease, border-radius 0.5s ease, background 0.5s ease;
+    transition: border-color 0.5s ease, border-radius 1s ease, background 0.5s ease;
     flex-direction: row;
     overflow: hidden;
 
