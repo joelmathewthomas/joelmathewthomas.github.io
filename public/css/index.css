@@ -98,7 +98,7 @@ html::-webkit-scrollbar {
 #resume {
     border: 1px solid lavender;
     cursor: pointer;
-    transition: border-color 0.5s ease, border-radius 1s ease, background 0.5s ease;
+    transition: border-color 0.5s ease, border-radius 0.5s ease, background 0.5s ease;
     color: lavender;
     text-decoration: none;
     padding: 0.5vw;
